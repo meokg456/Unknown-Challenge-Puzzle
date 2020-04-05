@@ -10,21 +10,53 @@
 	<Window.Resources>
 		<BitmapImage x:Key="sourceImage" UriSource="Image/UnownLegion.jpg" />
 	</Window.Resources>
+
 	<Grid Background="#FFB99A55">
+
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="2*"></ColumnDefinition>
 			<ColumnDefinition Width="1*"></ColumnDefinition>
 		</Grid.ColumnDefinitions>
 		<Grid.RowDefinitions>
+			<RowDefinition Height="20"></RowDefinition>
 			<RowDefinition Height="1*"></RowDefinition>
 			<RowDefinition Height="1*"></RowDefinition>
 		</Grid.RowDefinitions>
-		<UniformGrid x:Name="gameBoard" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Columns="13" Rows="8" Margin="20,94">
-			
-		</UniformGrid>
-		<Image Margin="10" Source="{StaticResource sourceImage}" Grid.Column="1" Grid.Row="0" RenderOptions.BitmapScalingMode="HighQuality"></Image>
-		<StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Center">
-			<Label Margin="40" Name="timerLable" Content="5:00" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="30" Height="50" Width="160" Background="#ecf0f1"></Label>
+		<Border Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Margin="20,84" BorderBrush="LightGoldenrodYellow" BorderThickness="5">
+			<Grid x:Name="gameBoard">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="1*"></ColumnDefinition>
+					<ColumnDefinition Width="1*"></ColumnDefinition>
+					<ColumnDefinition Width="1*"></ColumnDefinition>
+					<ColumnDefinition Width="1*"></ColumnDefinition>
+					<ColumnDefinition Width="1*"></ColumnDefinition>
+					<ColumnDefinition Width="1*"></ColumnDefinition>
+					<ColumnDefinition Width="1*"></ColumnDefinition>
+					<ColumnDefinition Width="1*"></ColumnDefinition>
+					<ColumnDefinition Width="1*"></ColumnDefinition>
+					<ColumnDefinition Width="1*"></ColumnDefinition>
+					<ColumnDefinition Width="1*"></ColumnDefinition>
+					<ColumnDefinition Width="1*"></ColumnDefinition>
+					<ColumnDefinition Width="1*"></ColumnDefinition>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="1*"></RowDefinition>
+					<RowDefinition Height="1*"></RowDefinition>
+					<RowDefinition Height="1*"></RowDefinition>
+					<RowDefinition Height="1*"></RowDefinition>
+					<RowDefinition Height="1*"></RowDefinition>
+					<RowDefinition Height="1*"></RowDefinition>
+					<RowDefinition Height="1*"></RowDefinition>
+					<RowDefinition Height="1*"></RowDefinition>
+				</Grid.RowDefinitions>
+			</Grid>
+		</Border>
+		<Menu Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="Transparent">
+			<MenuItem Header="New game" Click="NewGameMenuItem_Click"></MenuItem>
+		</Menu>
+		<Image Margin="10" Source="{StaticResource sourceImage}" Grid.Column="1" Grid.Row="1" RenderOptions.BitmapScalingMode="HighQuality"></Image>
+		<StackPanel Grid.Column="1" Grid.Row="2" VerticalAlignment="Center">
+			<Label Margin="40" Name="timerLable" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="30" Height="50" Width="160" Background="#ecf0f1"></Label>
 			<Button Name="playButton" Content="Play" FontSize="30" Height="50" Width="160" Background="#95a5a6" Click="playButton_Click" ></Button>
 		</StackPanel>
 	</Grid>
